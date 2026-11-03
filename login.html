@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XBOX CUENTA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="xbox-login-body">
+
+    <!-- Contenedor principal de dos columnas -->
+    <div class="xbox-login-container">
+
+        <!-- LADO IZQUIERDO: Panel Azul con Bienvenida e Ilustración -->
+        <div class="xbox-left-panel">
+            <div class="xbox-left-content">
+                
+                <div class="xbox-illustration-box">
+                    <div class="xbox-badge-icon">🎮 🕹️</div>
+                    <h2>¡BIENVENID@ JUGADOR!</h2>
+                </div>
+
+                <div class="xbox-notices-box">
+                    <h3>¡Novedades!</h3>
+                    <p>Consulta tus logros, tus amigos y tus juegos favoritos de xbox de manera rápida y segura. Game Pass disponible.</p>
+                </div>
+
+                <div class="xbox-slider-dots">
+                    <span class="xbox-dot active"></span>
+                    <span class="xbox-dot"></span>
+                    <span class="xbox-dot"></span>
+                </div>
+            </div>
+
+            <div class="xbox-left-footer">
+                Xbos &copy; 2026<br>
+                <span>Privacidad y cookies | Términos de uso</span>
+            </div>
+        </div>
+
+        <!-- LADO DERECHO: Panel Blanco con el Formulario de Acceso -->
+        <div class="xbox-right-panel">
+            <div class="xbox-login-wrapper">
+                
+                <div class="login-back-container">
+                    <a href="index.html" class="xbox-back-link">← Regresar al inicio</a>
+                </div>
+
+                <div class="xbox-logo-header">
+                    <div class="xbox-logo-circle">X</div>
+                    <h1>XBOX <strong>CUENTA</strong></h1>
+                </div>
+
+                <form id="form-login" action="#" method="POST">
+                    
+                    <div class="xbox-input-group">
+                        <label for="usuario">Gamertag o correo</label>
+                        <input type="text" id="usuario" name="usuario" required>
+                    </div>
+
+                    <div class="xbox-input-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <button type="submit" class="xbox-btn-ingresar">INGRESAR</button>
+
+                </form>
+
+                <div class="xbox-login-help">
+                    <a href="#">Necesito ayuda</a> | <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
