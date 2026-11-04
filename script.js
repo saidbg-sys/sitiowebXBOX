@@ -88,32 +88,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
-
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
-
-menuToggle.addEventListener("click", () => {
-
-    navLinks.classList.toggle("active");
-
-    const abierto = navLinks.classList.contains("active");
-
-    menuToggle.setAttribute("aria-expanded", abierto);
-    menuToggle.setAttribute(
-        "aria-label",
-        abierto ? "Cerrar menú" : "Abrir menú"
-    );
-
-});
-
-// Cerrar el menú al seleccionar una opción
-navLinks.querySelectorAll("a").forEach(enlace => {
-
-    enlace.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Abrir menú");
-    });
-
-});
-
