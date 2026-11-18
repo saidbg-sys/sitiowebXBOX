@@ -107,7 +107,70 @@ body {
     background-color: #0b5a0b; /* Azul más oscuro al pasar el cursor */
 }
 
-@media (max-width: 600px) {
+/* ----- MENÚ HAMBURGUESA ----- */
+.menu-toggle {
+    display: none;             /* Oculto en escritorio */
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background: none;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #107c10;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Animación de ☰ a ✕ al abrir */
+.menu-toggle.abierto span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.abierto span:nth-child(2) { opacity: 0; }
+.menu-toggle.abierto span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.6rem 1rem;
+    }
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .menu-toggle {
+        display: flex;         /* Muestra la hamburguesa en móvil */
+    }
+    .nav-links {
+        display: none;         /* Menú oculto por defecto */
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+        padding-top: 0.5rem;
+    }
+    .nav-links.abierto {
+        display: flex;         /* Se muestra al pulsar la hamburguesa */
+    }
+    .nav-links a {
+        padding: 14px 4px;
+        border-top: 1px solid #e2e8f0;
+        font-size: 1rem;
+    }
+    .nav-links .btn-nav-login {
+        margin-top: 8px;
+        text-align: center;
+        border-top: none;
+    }
+}
+
+@media (max-width: 768px) {
     .navbar {
         padding: 0.6rem 1rem;  /* Reduce el padding en pantallas móviles pequeñas */
     }
@@ -1196,54 +1259,4 @@ section[id] { scroll-margin-top: 80px; } /* El menú fijo no tapa los títulos a
     html { scroll-behavior: auto; }
     .marquee-track { animation: none !important; }
 }
-
-/* BOTÓN HAMBURGUESA */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 28px;
-    height: 3px;
-    background-color: green;
-    margin: 6px 0;
-    border-radius: 3px;
-}
-
-/* DISEÑO PARA CELULARES */
-@media screen and (max-width: 768px) {
-
-    .nav-container {
-        position: relative;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        gap: 20px;
-        padding: 20px 0;
-        background-color: #107c10;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-}
-
-
-
 
